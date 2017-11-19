@@ -23,6 +23,7 @@ public abstract class AbstractMapEntry<K, V> implements Map.Entry<K, V> {
     }
 
     // Map.Entry.equalsの一般契約を実装
+    @SuppressWarnings("rawtypes")
     @Override
     public boolean equals(Object o) {
         if (o == this)
