@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package chapter02.item06.eliminateObsoleteObjectReference;
 
@@ -9,7 +9,7 @@ import java.util.EmptyStackException;
 /**
  * 廃れたオブジェクト参照を取り除く<br>
  * メモリリークを発見できますか？
- * 
+ *
  * @author sinokuma
  *
  */
@@ -25,7 +25,7 @@ public class Stack {
 
     public void push(Object e) {
         ensureCapacity();
-        elements[size++] =e;
+        elements[size++] = e;
     }
 
     public Object pop() {
@@ -46,7 +46,7 @@ public class Stack {
 
     /**
      * 配列を大きくする必要があるごとに容量を倍にして最低もう1つの要素分の容量を確保する
-     * 
+     *
      */
     private void ensureCapacity() {
         if (elements.length == size) {
