@@ -1,5 +1,5 @@
 /**
- * 
+ * enumとアノテーション
  */
 /**
  * @author sinokuma
