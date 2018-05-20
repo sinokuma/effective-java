@@ -16,6 +16,7 @@ import java.util.Set;
 public class Sample {
 
     // 原型を使用している - 使用すべきではない
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static Set union(Set s1, Set s2) {
         Set result = new HashSet(s1);
         result.addAll(s2);

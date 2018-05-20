@@ -15,6 +15,7 @@ import java.util.List;
 public class Sample {
 
     // ジェネリクスを使用しない簡約、そして並行性の欠陥
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     static Object reduce(List list, Function f, Object initVal) {
         synchronized (list) {
             Object result = initVal;
@@ -25,6 +26,7 @@ public class Sample {
     }
 
     // ジェネリクスを使用せず、並行性の欠陥もない簡約
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     static Object reduce2(List list, Function f, Object initVal) {
         // リストを内部的に
         Object[] snapshot = list.toArray();
