@@ -23,7 +23,6 @@ public enum PayrollDay {
         return payType.pay(hoursWorked, payRate);
     }
 
-    // �헪enum�^
     private enum PayType {
         WEEKDAY {
             double overtimePay(double hours, double payRate) {

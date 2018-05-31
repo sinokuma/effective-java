@@ -20,14 +20,12 @@ public enum Planet {
     URANUS	(8.683e+25, 2.556e7),
     NEPTUNE	(1.024e+26, 2.477e7);
 
-    private final double mass;				// �P��: �L���O����
-    private final double radius;			// �P��: ���[�g��
-    private final double surfaceGravity;	// �P��: m/s^2
+    private final double mass;
+    private final double radius;
+    private final double surfaceGravity;
 
-    // ���L���͒萔�A�P��: m^3/kg s^2
     private static final double G = 6.67300E-11;
 
-    // �R���X�g���N�^
     Planet(double mass, double radius) {
         this.mass = mass;
         this.radius = radius;
