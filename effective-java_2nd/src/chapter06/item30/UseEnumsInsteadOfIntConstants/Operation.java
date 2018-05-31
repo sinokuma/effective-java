@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package chapter06.item30.UseEnumsInsteadOfIntConstants;
 
@@ -7,45 +7,45 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * int’è”‚Ì‘ã‚í‚è‚Éenum‚ğg—p‚·‚é<br>
- * ’è”ŒÅ—LƒNƒ‰ƒX–{‘Ì‚Æ’è”ŒÅ‘Ìƒf[ƒ^‚ğ‚ÂenumŒ^
- * 
+ * intå®šæ•°ã®ä»£ã‚ã‚Šã«enumã‚’ä½¿ç”¨ã™ã‚‹<br>
+ * å®šæ•°å›ºæœ‰ã‚¯ãƒ©ã‚¹æœ¬ä½“ã¨å®šæ•°å›ºä½“ãƒ‡ãƒ¼ã‚¿ã‚’æŒã¤enumå‹
+ *
  * @author sinokuma
  *
  */
 public enum Operation {
-	PLUS("+") {
-		double apply(double x, double y) { return x + y; }
-	},
-	MINUS("-") {
-		double apply(double x, double y) { return x - y; }
-	},
-	TIMES("*") {
-		double apply(double x, double y) { return x * y; }
-	},
-	DIVIDE("/") {
-		double apply(double x, double y) { return x / y; }
-	};
+    PLUS("+") {
+        double apply(double x, double y) { return x + y; }
+    },
+    MINUS("-") {
+        double apply(double x, double y) { return x - y; }
+    },
+    TIMES("*") {
+        double apply(double x, double y) { return x * y; }
+    },
+    DIVIDE("/") {
+        double apply(double x, double y) { return x / y; }
+    };
 
-	private final String symbol;
+    private final String symbol;
 
-	// enumŒ^‚ÉfromStringƒƒ\ƒbƒh‚ğÀ‘•‚·‚é
-	private static final Map<String, Operation> stringToEnum = new HashMap<>();
-	static {	// ’è”–¼‚©‚çenum’è”‚Ö‚Ìƒ}ƒbƒv‚ğ‰Šú‰»
-		for (Operation op : values())
-			stringToEnum.put(op.toString(), op);
-	}
-	// •¶š—ñ‚É‘Î‚·‚éOperation‚ğ•Ô‚·B•¶š—ñ‚ª•s³‚È‚çnull‚ğ•Ô‚·B
-	public static Operation fromString(String symbol) {
-		return stringToEnum.get(symbol);
-	}
+    // enumï¿½^ï¿½ï¿½fromStringï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    private static final Map<String, Operation> stringToEnum = new HashMap<>();
+    static {	// ï¿½è”ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½enumï¿½è”ï¿½Ö‚Ìƒ}ï¿½bï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        for (Operation op : values())
+            stringToEnum.put(op.toString(), op);
+    }
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‘Î‚ï¿½ï¿½ï¿½Operationï¿½ï¿½Ô‚ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ñ‚ª•sï¿½ï¿½ï¿½È‚ï¿½nullï¿½ï¿½Ô‚ï¿½ï¿½B
+    public static Operation fromString(String symbol) {
+        return stringToEnum.get(symbol);
+    }
 
-	Operation(String symbol) { this.symbol = symbol; }
+    Operation(String symbol) { this.symbol = symbol; }
 
-	// enumŒ^‚ÅtoString‚ğƒI[ƒo[ƒ‰ƒCƒh‚·‚éê‡‚ÍAfromStringƒƒ\ƒbƒh‚ğŒŸ“¢‚·‚é
-	@Override
-	public String toString() { return symbol; }
+    // enumï¿½^ï¿½ï¿½toStringï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Cï¿½hï¿½ï¿½ï¿½ï¿½ê‡ï¿½ÍAfromStringï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    @Override
+    public String toString() { return symbol; }
 
-	abstract double apply(double x, double y);
+    abstract double apply(double x, double y);
 
 }

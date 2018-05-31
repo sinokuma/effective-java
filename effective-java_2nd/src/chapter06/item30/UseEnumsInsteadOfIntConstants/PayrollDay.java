@@ -1,48 +1,48 @@
 /**
- * 
+ *
  */
 package chapter06.item30.UseEnumsInsteadOfIntConstants;
 
 /**
- * int’è”‚Ì‘ã‚í‚è‚Éenum‚ğg—p‚·‚é<br>
- * í—ªenumƒpƒ^[ƒ“
- * 
+ * intå®šæ•°ã®ä»£ã‚ã‚Šã«enumã‚’ä½¿ç”¨ã™ã‚‹<br>
+ * æˆ¦ç•¥enumãƒ‘ã‚¿ãƒ¼ãƒ³
+ *
  * @author sinokuma
  *
  */
 public enum PayrollDay {
-	MONDAY(PayType.WEEKDAY),TUESDAY(PayType.WEEKDAY),
-	WEDNESDAY(PayType.WEEKDAY),THURSDAY(PayType.WEEKDAY),
-	FRIDAY(PayType.WEEKDAY),
-	SATURDAY(PayType.WEEKEND),SUNDAY(PayType.WEEKEND);
+    MONDAY(PayType.WEEKDAY),TUESDAY(PayType.WEEKDAY),
+    WEDNESDAY(PayType.WEEKDAY),THURSDAY(PayType.WEEKDAY),
+    FRIDAY(PayType.WEEKDAY),
+    SATURDAY(PayType.WEEKEND),SUNDAY(PayType.WEEKEND);
 
-	private final PayType payType;
-	PayrollDay(PayType payType) { this.payType = payType; }
+    private final PayType payType;
+    PayrollDay(PayType payType) { this.payType = payType; }
 
-	double pay(double hoursWorked, double payRate) {
-		return payType.pay(hoursWorked, payRate);
-	}
+    double pay(double hoursWorked, double payRate) {
+        return payType.pay(hoursWorked, payRate);
+    }
 
-	// í—ªenumŒ^
-	private enum PayType {
-		WEEKDAY {
-			double overtimePay(double hours, double payRate) {
-				return hours <= HOURS_PER_SHIFT ? 0 : (hours - HOURS_PER_SHIFT) * payRate / 2;
-			}
-		},
-		WEEKEND {
-			double overtimePay(double hours, double payRate) {
-				return hours * payRate / 2;
-			}
-		};
-		private static final int HOURS_PER_SHIFT = 8;
+    // ï¿½í—ªenumï¿½^
+    private enum PayType {
+        WEEKDAY {
+            double overtimePay(double hours, double payRate) {
+                return hours <= HOURS_PER_SHIFT ? 0 : (hours - HOURS_PER_SHIFT) * payRate / 2;
+            }
+        },
+        WEEKEND {
+            double overtimePay(double hours, double payRate) {
+                return hours * payRate / 2;
+            }
+        };
+        private static final int HOURS_PER_SHIFT = 8;
 
-		abstract double overtimePay(double hrs, double payRate);
+        abstract double overtimePay(double hrs, double payRate);
 
-		double pay(double hoursWorked, double payRate) {
-			double basePay = hoursWorked * payRate;
-			return basePay + overtimePay(hoursWorked, payRate);
-		}
+        double pay(double hoursWorked, double payRate) {
+            double basePay = hoursWorked * payRate;
+            return basePay + overtimePay(hoursWorked, payRate);
+        }
 
-	}
+    }
 }

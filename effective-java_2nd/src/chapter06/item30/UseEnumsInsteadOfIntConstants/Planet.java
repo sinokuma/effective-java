@@ -1,44 +1,44 @@
 /**
- * 
+ *
  */
 package chapter06.item30.UseEnumsInsteadOfIntConstants;
 
 /**
- * int’è”‚Ì‘ã‚í‚è‚Éenum‚ğg—p‚·‚é<br>
- * ƒf[ƒ^‚ÆU‚é•‘‚¢‚ğ‚ÂenumŒ^
- * 
+ * intå®šæ•°ã®ä»£ã‚ã‚Šã«enumã‚’ä½¿ç”¨ã™ã‚‹<br>
+ * ãƒ‡ãƒ¼ã‚¿ã¨æŒ¯ã‚‹èˆã„ã‚’æŒã¤enumå‹
+ *
  * @author sinokuma
  *
  */
 public enum Planet {
-	MERCURY	(3.302e+23, 2.439e6),
-	VENUS	(4.869e+24, 6.052e6),
-	EARTH	(5.975e+24, 6.378e6),
-	MARS	(6.419e+23, 3.393e6),
-	JUPITER	(1.899e+27, 7.146e7),
-	SATURN	(5.685e+26, 6.027e7),
-	URANUS	(8.683e+25, 2.556e7),
-	NEPTUNE	(1.024e+26, 2.477e7);
+    MERCURY	(3.302e+23, 2.439e6),
+    VENUS	(4.869e+24, 6.052e6),
+    EARTH	(5.975e+24, 6.378e6),
+    MARS	(6.419e+23, 3.393e6),
+    JUPITER	(1.899e+27, 7.146e7),
+    SATURN	(5.685e+26, 6.027e7),
+    URANUS	(8.683e+25, 2.556e7),
+    NEPTUNE	(1.024e+26, 2.477e7);
 
-	private final double mass;				// ’PˆÊ: ƒLƒƒOƒ‰ƒ€
-	private final double radius;			// ’PˆÊ: ƒ[ƒgƒ‹
-	private final double surfaceGravity;	// ’PˆÊ: m/s^2
+    private final double mass;				// ï¿½Pï¿½ï¿½: ï¿½Lï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½
+    private final double radius;			// ï¿½Pï¿½ï¿½: ï¿½ï¿½ï¿½[ï¿½gï¿½ï¿½
+    private final double surfaceGravity;	// ï¿½Pï¿½ï¿½: m/s^2
 
-	// –œ—Lˆø—Í’è”A’PˆÊ: m^3/kg s^2
-	private static final double G = 6.67300E-11;
+    // ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½Í’è”ï¿½Aï¿½Pï¿½ï¿½: m^3/kg s^2
+    private static final double G = 6.67300E-11;
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	Planet(double mass, double radius) {
-		this.mass = mass;
-		this.radius = radius;
-		surfaceGravity = G * mass / (radius * radius);
-	}
+    // ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+    Planet(double mass, double radius) {
+        this.mass = mass;
+        this.radius = radius;
+        surfaceGravity = G * mass / (radius * radius);
+    }
 
-	public double mass() 			{ return mass; }
-	public double radius() 			{ return radius; }
-	public double surfaceGravity() 	{ return surfaceGravity; }
+    public double mass() 			{ return mass; }
+    public double radius() 			{ return radius; }
+    public double surfaceGravity() 	{ return surfaceGravity; }
 
-	public double surfaceWeight(double mass) {
-		return mass * surfaceGravity;	// F=ma
-	}
+    public double surfaceWeight(double mass) {
+        return mass * surfaceGravity;	// F=ma
+    }
 }
