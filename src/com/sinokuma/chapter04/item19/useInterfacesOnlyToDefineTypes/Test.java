@@ -3,7 +3,7 @@
  */
 package com.sinokuma.chapter04.item19.useInterfacesOnlyToDefineTypes;
 
-import static chapter04.item19.useInterfacesOnlyToDefineTypes.PhysicalConstantsClass.*;
+import static com.sinokuma.chapter04.item19.useInterfacesOnlyToDefineTypes.PhysicalConstantsClass.*;
 
 /**
  * 型を定義するためだけにインタフェースを使用する<br>
