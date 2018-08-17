@@ -1,4 +1,4 @@
-package com.sinokuma.chapter08.item49.PreferPrimitiveTypesToBoxedPrimitives.AvoidFloatAndDoubleIfExactAnswersAreRequired;
+package com.sinokuma.chapter08.item49.PreferPrimitiveTypesToBoxedPrimitives;
 
 /**
  * ボクシングされた基本データより基本データ型を選ぶ。
