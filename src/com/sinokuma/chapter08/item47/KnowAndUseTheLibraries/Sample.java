@@ -1,4 +1,4 @@
-package com.sinokuma.chapter08.item47.KnowAndUseTheLibraries.PreferForEachLoopsToTraditionalForLoops;
+package com.sinokuma.chapter08.item47.KnowAndUseTheLibraries;
 
 import java.util.*;
 
